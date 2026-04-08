@@ -735,11 +735,42 @@ RESPONSIVE
 .samedi-grid { grid-template-columns:1fr; }
 .disciplines { grid-template-columns:1fr; }
 }
+  .main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px 24px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+
+.main-nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.main-nav a:hover { opacity: 0.7; }
+
+html { scroll-behavior: smooth; }
 </style>
 
 </head>
 <body style="background:#080808;color:#e8e0d0;">
-
+<nav class="main-nav">
+  <a href="#description">Le Club</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#planning">Planning</a>
+  <a href="#contact">Contact</a>
+</nav>
 <!-- ══ HERO ══ -->
 
 <section class="hero">
@@ -777,7 +808,7 @@ RESPONSIVE
 
 <!-- ══ DESCRIPTION ══ -->
 
-<section class="section">
+<section class="section" id="description">
   <div class="section-label fade-in" style="animation-delay:.1s">Le Club</div>
 
   <p class="intro-text fade-in" style="animation-delay:.15s">
@@ -831,7 +862,7 @@ RESPONSIVE
   </div>
 
   <!-- Tarifs -->
-
+ <div id="tarifs"></div>
   <div class="section-label fade-in" style="animation-delay:.35s; margin-top:60px;">Adhésion</div>
   <div class="tarifs fade-in" style="animation-delay:.4s">
     <div class="tarif-card">
@@ -855,7 +886,7 @@ RESPONSIVE
 
 <!-- ══ PLANNING ══ -->
 
-<section class="planning-section">
+<section class="planning-section" id="planning">
   <div class="planning-inner">
     <div class="section-label" style="margin-bottom:24px;">Planning des cours</div>
 
@@ -963,7 +994,7 @@ RESPONSIVE
 
 <!-- ══ CTA + ADRESSES ══ -->
 
-<section class="cta-section">
+<section class="cta-section" id="contact">
   <p class="cta-title fade-in">Venez nous essayer !</p>
   <p class="cta-sub fade-in" style="animation-delay:.1s">Premier cours offert · Tous niveaux · Dès 6 ans</p>
 
