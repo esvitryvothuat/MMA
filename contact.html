@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Võ Thuật Es Vitry</title>
+<meta name="description" content="Contactez le Võ Thuật Es Vitry. Premier cours offert, nous répondons par Instagram ou via le formulaire. Deux salles à Vitry-sur-Seine.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥊</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.premier-cours {
+  background: var(--gold); padding: 18px 32px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+}
+.premier-cours-text {
+  font-family: 'Cinzel', serif; font-size: .75rem;
+  font-weight: 700; letter-spacing: .15em; color: var(--bg);
+  text-transform: uppercase;
+}
+.insta-big-btn {
+  display: flex; align-items: center; gap: 18px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-left: 4px solid var(--gold); padding: 28px 32px;
+  text-decoration: none; color: var(--text);
+  transition: border-color .25s, background .25s;
+  margin-bottom: 1px;
+}
+.insta-big-btn:hover {
+  border-left-color: var(--gold-light); background: var(--bg4);
+}
+.insta-big-icon { font-size: 2rem; flex-shrink: 0; }
+.insta-big-handle {
+  font-family: 'Cinzel', serif; font-size: 1.1rem;
+  font-weight: 700; color: var(--gold); letter-spacing: .06em;
+}
+.insta-big-sub { font-size: .78rem; color: var(--text-dim); margin-top: 4px; }
+.insta-big-arrow {
+  margin-left: auto; font-size: 1.2rem; color: var(--gold-dim);
+  transition: transform .2s, color .2s;
+}
+.insta-big-btn:hover .insta-big-arrow { transform: translateX(4px); color: var(--gold); }
+
+.contact-info-block {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-left: 4px solid var(--gold-dim); padding: 28px 32px;
+  margin-bottom: 24px;
+}
+.contact-info-block h3 {
+  font-family: 'Cinzel', serif; font-size: .8rem;
+  font-weight: 700; letter-spacing: .15em; color: var(--gold);
+  margin-bottom: 12px; text-transform: uppercase;
+}
+.contact-info-block p { font-size: .84rem; color: rgba(232,224,208,.8); line-height: 1.7; }
+
+.form-success {
+  display: none; background: var(--bg3); border: 1px solid var(--gold);
+  padding: 20px; text-align: center; margin-top: 16px;
+  font-size: .85rem; color: var(--gold-light);
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.webp" alt="Logo" class="nav-logo">
+    <span class="nav-name">VÕ THUẬT<br>ES VITRY</span>
+  </a>
+  <button class="nav-toggle" aria-label="Ouvrir le menu" onclick="document.getElementById('nl').classList.toggle('open');this.textContent=document.getElementById('nl').classList.contains('open')?'✕':'☰'">☰</button>
+  <ul class="nav-links" id="nl">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="club.html">Le Club</a></li>
+    <li><a href="equipe.html">L'Équipe</a></li>
+    <li><a href="planning.html">Planning</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html" aria-current="page">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Premier cours offert</a>
+</nav>
+
+<!-- Bannière premier cours -->
+<div class="premier-cours">
+  <span class="premier-cours-text" aria-hidden="true">★</span>
+  <span class="premier-cours-text">Premier cours offert · Tous niveaux · Dès 6 ans</span>
+  <span class="premier-cours-text" aria-hidden="true">★</span>
+</div>
+
+<div class="wrap">
+  <div class="page-head" data-bg="CONTACT">
+    <h1 class="fade-up">Contact</h1>
+    <p class="fade-up" style="animation-delay:.1s">Nous sommes disponibles par Instagram ou via le formulaire</p>
+  </div>
+</div>
+
+<!-- ══ CONTACT LAYOUT ══ -->
+<div class="wrap">
+  <section class="section">
+    <div class="contact-layout">
+
+      <!-- Colonne gauche : Instagram + infos -->
+      <div>
+        <p class="eyebrow">La façon la plus rapide</p>
+        <h2 class="title" style="font-size:1.4rem;margin-bottom:24px;">Écrivez-nous sur Instagram</h2>
+
+        <a href="https://instagram.com/esvitryvothuatmma" target="_blank" rel="noopener noreferrer" class="insta-big-btn">
+          <span class="insta-big-icon" aria-hidden="true">📸</span>
+          <div>
+            <div class="insta-big-handle">@esvitryvothuatmma</div>
+            <div class="insta-big-sub">Réponse rapide · DM ouverts</div>
+          </div>
+          <span class="insta-big-arrow">→</span>
+        </a>
+
+        <div class="contact-info-block" style="margin-top:24px;">
+          <h3>Cours d'essai gratuit</h3>
+          <p>Contactez-nous pour convenir d'une date et d'un horaire. Nous vous accueillons pour un <strong style="color:var(--gold-light)">premier cours entièrement offert</strong>, quel que soit votre niveau.</p>
+        </div>
+
+        <div class="contact-info-block">
+          <h3>Nos salles</h3>
+          <p>
+            <strong style="color:var(--text)">Gosnat</strong><br>
+            4 Avenue du Colonel Fabien — 94400 Vitry-sur-Seine<br><br>
+            <strong style="color:var(--text)">Palais des Sports</strong><br>
+            12 Avenue Henri Barbusse — 94400 Vitry-sur-Seine
+          </p>
+        </div>
+
+        <div class="contact-info-block">
+          <h3>Fédérations</h3>
+          <p>Nous sommes affiliés à la <strong style="color:var(--gold-light)">FVCTVNF</strong> (Võ Cổ Truyền) et à la <strong style="color:var(--gold-light)">FMMAF</strong> (MMA).</p>
+        </div>
+      </div>
+
+      <!-- Colonne droite : Formulaire -->
+      <div>
+        <p class="eyebrow">Formulaire</p>
+        <h2 class="title" style="font-size:1.4rem;margin-bottom:24px;">Envoyez-nous un message</h2>
+
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="nom">Votre nom</label>
+            <input class="form-input" type="text" id="nom" name="nom" placeholder="Prénom Nom" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.fr" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sujet">Sujet</label>
+            <select class="form-select form-input" id="sujet" name="sujet">
+              <option value="essai">Cours d'essai gratuit</option>
+              <option value="inscription">Inscription / Adhésion</option>
+              <option value="planning">Question sur le planning</option>
+              <option value="tarifs">Question sur les tarifs</option>
+              <option value="competition">Compétition MMA</option>
+              <option value="autre">Autre question</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Votre message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-full">Envoyer le message</button>
+        </form>
+
+        <div class="form-success" id="form-success">
+          ✓ Message envoyé ! Nous vous répondrons rapidement.<br>
+          <span style="font-size:.75rem;color:var(--text-dim);margin-top:4px;display:block;">Pour une réponse plus rapide, contactez-nous via Instagram.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ ADRESSES ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Lieux</p>
+    <h2 class="title">Nos salles</h2>
+    <div class="addr-grid">
+      <div class="addr-card">
+        <div class="addr-icon" aria-hidden="true">📍</div>
+        <div class="addr-name">Complexe Sportif Georges Gosnat</div>
+        <div class="addr-street">4 Avenue du Colonel Fabien<br>94400 Vitry-sur-Seine</div>
+        <a class="addr-link" href="https://maps.google.com/?q=4+Avenue+du+Colonel+Fabien+94400+Vitry-sur-Seine" target="_blank" rel="noopener">Voir sur Maps →</a>
+      </div>
+      <div class="addr-card">
+        <div class="addr-icon" aria-hidden="true">📍</div>
+        <div class="addr-name">Palais des Sports Maurice Thorez</div>
+        <div class="addr-street">12 Avenue Henri Barbusse<br>94400 Vitry-sur-Seine</div>
+        <a class="addr-link" href="https://maps.google.com/?q=12+Avenue+Henri+Barbusse+94400+Vitry-sur-Seine" target="_blank" rel="noopener">Voir sur Maps →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span class="footer-copy">© Võ Thuật Es Vitry · Fondé en 1983 · Vitry-sur-Seine</span>
+  <a href="https://instagram.com/esvitryvothuatmma" target="_blank" rel="noopener" class="footer-insta">@esvitryvothuatmma</a>
+  <div class="footer-feds">
+    <span class="fed-badge">FVCTVNF</span>
+    <span class="fed-badge">FMMAF</span>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

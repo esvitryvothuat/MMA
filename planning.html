@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning — Võ Thuật Es Vitry</title>
+<meta name="description" content="Planning des cours de Võ Thuật et MMA à Vitry-sur-Seine. Lundi au samedi, toutes les informations sur les horaires, coaches et lieux.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥊</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.webp" alt="Logo" class="nav-logo">
+    <span class="nav-name">VÕ THUẬT<br>ES VITRY</span>
+  </a>
+  <button class="nav-toggle" aria-label="Ouvrir le menu" onclick="document.getElementById('nl').classList.toggle('open');this.textContent=document.getElementById('nl').classList.contains('open')?'✕':'☰'">☰</button>
+  <ul class="nav-links" id="nl">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="club.html">Le Club</a></li>
+    <li><a href="equipe.html">L'Équipe</a></li>
+    <li><a href="planning.html" aria-current="page">Planning</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Premier cours offert</a>
+</nav>
+
+<div class="wrap">
+  <div class="page-head" data-bg="PLANNING">
+    <h1 class="fade-up">Planning des cours</h1>
+    <p class="fade-up" style="animation-delay:.1s">8 séances par semaine · Du lundi au samedi</p>
+  </div>
+</div>
+
+<!-- ══ TABLE ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Horaires</p>
+    <h2 class="title">Semaine type</h2>
+    <p class="body-text">Les cours MMA sont surlignés en rouge. Tous les cours de la semaine contribuent à la formation MMA.</p>
+
+    <div class="table-wrap">
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th>Jour</th>
+            <th>Horaire</th>
+            <th>Discipline</th>
+            <th>Public</th>
+            <th>Coach</th>
+            <th>Lieu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day">Lundi</td>
+            <td>18h – 19h30</td>
+            <td>Võ Thuật</td>
+            <td>Enfants / Ados</td>
+            <td>Tamara</td>
+            <td>Gosnat</td>
+          </tr>
+          <tr>
+            <td class="day">Mardi</td>
+            <td>19h30 – 21h</td>
+            <td class="mma-cell">MMA (pieds-poings)</td>
+            <td>Ados / Adultes</td>
+            <td>Zair</td>
+            <td>Gosnat</td>
+          </tr>
+          <tr>
+            <td class="day">Mercredi</td>
+            <td>19h – 20h30</td>
+            <td>Võ Thuật</td>
+            <td>Ados / Adultes</td>
+            <td>Daniel</td>
+            <td>Palais des Sports</td>
+          </tr>
+          <tr>
+            <td class="day">Jeudi</td>
+            <td>19h30 – 21h</td>
+            <td class="mma-cell">MMA (lutte & sol)</td>
+            <td>Ados / Adultes</td>
+            <td>Matteo + Daniel</td>
+            <td>Gosnat</td>
+          </tr>
+          <tr>
+            <td class="day" rowspan="2">Vendredi</td>
+            <td>18h – 19h</td>
+            <td>Võ Thuật</td>
+            <td>Enfants / Ados</td>
+            <td>Tamara</td>
+            <td>Gosnat</td>
+          </tr>
+          <tr>
+            <td>19h – 20h30</td>
+            <td class="mma-cell">MMA (pieds-poings)</td>
+            <td>Ados / Adultes</td>
+            <td>Zair</td>
+            <td>Gosnat</td>
+          </tr>
+          <tr>
+            <td class="day" rowspan="2">Samedi</td>
+            <td>Après-midi</td>
+            <td>Võ Thuật</td>
+            <td>Enfants / Ados</td>
+            <td>Tamara</td>
+            <td>Palais des Sports</td>
+          </tr>
+          <tr>
+            <td>18h – 20h</td>
+            <td class="mma-cell">MMA (lutte & sol)</td>
+            <td>Ados / Adultes</td>
+            <td>Matteo</td>
+            <td>Palais des Sports</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--gold)"></div>
+        Salle Georges Gosnat — 4 Av. du Colonel Fabien
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--red)"></div>
+        Palais des Sports Maurice Thorez — 12 Av. Henri Barbusse
+      </div>
+    </div>
+    <p class="schedule-note">Les cours MMA sont accessibles dès l'adhésion — aucun supplément. L'accès au MMA pour les jeunes est ouvert à partir de U14.</p>
+  </section>
+</div>
+
+<!-- ══ COMPÉTITIONS ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Compétition</p>
+    <h2 class="title">Compétitions</h2>
+
+    <div class="comp-grid">
+      <div class="comp-card red-border">
+        <div class="comp-header">
+          <span class="comp-icon" aria-hidden="true">🏆</span>
+          <div class="comp-title">Adultes</div>
+        </div>
+        <p class="comp-text">Compétitions FMMAF — championnats régionaux et nationaux de MMA sous l'égide de la FMMAF (organe interne de la Fédération Française de Boxe).</p>
+        <p class="comp-price">Licence compétition : +30 € <span style="font-size:.72rem;color:var(--text-dim)">en supplément de la cotisation</span></p>
+      </div>
+      <div class="comp-card gold-border">
+        <div class="comp-header">
+          <span class="comp-icon" aria-hidden="true">👥</span>
+          <div class="comp-title">Jeunes (U14+)</div>
+        </div>
+        <p class="comp-text">Les jeunes bénéficient de la formation MMA complète. Pour la compétition, ils participent à des épreuves de karaté mixte et de Võ Cổ Truyền, des disciplines très proches du MMA.</p>
+        <p class="comp-price">Inclus dans la cotisation <span style="font-size:.72rem;color:var(--text-dim)">aucun supplément</span></p>
+      </div>
+    </div>
+
+    <p style="font-size:.76rem;color:var(--text-dim);text-align:center;margin-top:28px;letter-spacing:.08em;">
+      Fédérations : <strong style="color:var(--gold)">FMMAF</strong> · <strong style="color:var(--gold)">FVCTVNF</strong>
+    </p>
+  </section>
+</div>
+
+<!-- ══ CTA ══ -->
+<div class="wrap" style="padding-bottom:80px;">
+  <div class="cta-banner">
+    <div>
+      <div class="cta-banner-title">Un cours vous intéresse ?</div>
+      <div class="cta-banner-sub">Premier cours offert · Contactez-nous pour confirmer l'horaire</div>
+    </div>
+    <a href="contact.html" class="btn btn-gold">Nous contacter</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© Võ Thuật Es Vitry · Fondé en 1983 · Vitry-sur-Seine</span>
+  <a href="https://instagram.com/esvitryvothuatmma" target="_blank" rel="noopener" class="footer-insta">@esvitryvothuatmma</a>
+  <div class="footer-feds">
+    <span class="fed-badge">FVCTVNF</span>
+    <span class="fed-badge">FMMAF</span>
+  </div>
+</footer>
+
+</body>
+</html>
