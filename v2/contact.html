@@ -115,7 +115,7 @@
 
         <div class="contact-info-block" style="margin-top:24px;">
           <h3>Cours d'essai gratuit</h3>
-          <p>Contactez-nous pour convenir d'une date et d'un horaire. Nous vous accueillons pour un <strong style="color:var(--gold-light)">premier cours entièrement offert</strong>, quel que soit votre niveau.</p>
+          <p>Venez directement à l'un de nos cours — <strong style="color:var(--gold-light)">le premier cours est entièrement offert</strong>, sans inscription préalable, quel que soit votre niveau. Consultez le <a href="planning.html" style="color:var(--gold);text-decoration:underline">planning</a> pour les horaires.</p>
         </div>
 
         <div class="contact-info-block">
@@ -209,6 +209,15 @@
 <script>
 function handleSubmit(e) {
   e.preventDefault();
+  var nom     = document.getElementById('nom').value;
+  var email   = document.getElementById('email').value;
+  var sujet   = document.getElementById('sujet').options[document.getElementById('sujet').selectedIndex].text;
+  var message = document.getElementById('message').value;
+  var body    = 'De : ' + nom + '\nEmail : ' + email + '\n\n' + message;
+  window.location.href =
+    'mailto:matteopadovanipro@gmail.com' +
+    '?subject=' + encodeURIComponent('[VT Es Vitry] ' + sujet) +
+    '&body='    + encodeURIComponent(body);
   document.getElementById('contact-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
 }
