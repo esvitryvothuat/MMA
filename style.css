@@ -729,3 +729,85 @@ footer {
   .insta-block { padding: 36px 20px; }
   .cta-banner { padding: 24px 20px; }
 }
+
+/* ══════════════ ANIMATIONS ENHANCED ══════════════ */
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s var(--ease), transform .65s var(--ease);
+}
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card hover lift — overrides earlier transitions */
+.team-card, .bureau-card, .price-card, .comp-card, .addr-card {
+  transition: background .25s, border-left-color .25s,
+              transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.team-card:hover, .bureau-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 42px rgba(0,0,0,.45), 0 0 0 1px rgba(201,168,76,.12);
+}
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 56px rgba(0,0,0,.5), 0 0 0 1px rgba(201,168,76,.2);
+}
+.comp-card:hover, .addr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,.4);
+}
+
+/* Stat glow on hover */
+.stat { transition: background .25s, transform .3s var(--ease); }
+.stat:hover { transform: translateY(-2px); }
+.stat-num { transition: color .3s, text-shadow .3s; }
+.stat:hover .stat-num {
+  color: var(--gold-light);
+  text-shadow: 0 0 24px rgba(201,168,76,.5);
+}
+
+/* Button shimmer */
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.16) 50%, transparent 62%);
+  transform: translateX(-110%) skewX(-15deg);
+  pointer-events: none;
+  transition: none;
+}
+.btn:hover::after {
+  animation: btn-shimmer .55s ease-out forwards;
+}
+@keyframes btn-shimmer {
+  to { transform: translateX(210%) skewX(-15deg); }
+}
+
+/* Nav logo subtle tilt on hover */
+.nav-logo { transition: transform .3s var(--ease), border-color .3s; }
+.nav-brand:hover .nav-logo { transform: rotate(6deg) scale(1.06); }
+
+/* Heritage card hover */
+.heritage-card {
+  transition: border-color .25s, background .25s, transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.heritage-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201,168,76,.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+
+/* Org badge hover */
+.org-badge { transition: background .2s, transform .2s var(--ease); }
+.org-badge:hover { transform: translateY(-2px); background: rgba(192,57,43,.3); }
+
+/* CTA banner subtle pulse border */
+@keyframes cta-pulse {
+  0%, 100% { border-left-color: var(--gold); }
+  50%       { border-left-color: var(--gold-light); }
+}
+.cta-banner { animation: cta-pulse 3s ease-in-out infinite; }
