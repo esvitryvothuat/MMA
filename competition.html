@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compétition — Võ Thuật Es Vitry</title>
+<meta name="description" content="Près de 100 médailles par an. Meilleur club de France en combat Võ Cổ Truyền. 3 circuits de compétition : FVCTVNF, Karaté Mixte, FMMAF.">
+<meta property="og:title" content="Compétition — Võ Thuật Es Vitry">
+<meta property="og:description" content="Près de 100 médailles par an. Meilleur club de France en combat Võ Cổ Truyền. 3 circuits : FVCTVNF, Karaté Mixte, FMMAF.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://esvitryvothuat.github.io/MMA/competition.html">
+<meta property="og:image" content="https://esvitryvothuat.github.io/MMA/logo.webp">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥊</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Stat block hero */
+.comp-stats {
+  display: flex; gap: 1px; background: var(--border); margin-top: 40px;
+}
+.comp-stat {
+  flex: 1; background: var(--bg3); padding: 32px 20px; text-align: center;
+  transition: background .25s;
+}
+.comp-stat:hover { background: var(--bg4); }
+.comp-stat-num {
+  font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900; line-height: 1;
+}
+.comp-stat-num.gold { color: var(--gold); }
+.comp-stat-num.red  { color: var(--red-light); }
+.comp-stat-label {
+  font-size: .55rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-dim); margin-top: 8px;
+}
+
+/* Trophée card */
+.trophy-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  padding: 44px 40px; margin-top: 32px; position: relative; overflow: hidden;
+  transition: background .25s, transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.trophy-card:hover {
+  background: var(--bg4); transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.45), 0 0 0 1px rgba(201,168,76,.18);
+}
+.trophy-card::before {
+  content: '🏆';
+  position: absolute; right: 36px; top: 50%; transform: translateY(-50%);
+  font-size: 5rem; opacity: .06; pointer-events: none;
+}
+.trophy-eyebrow {
+  font-size: .56rem; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 12px;
+}
+.trophy-title {
+  font-family: 'Cinzel', serif; font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 900; letter-spacing: .06em; margin-bottom: 10px;
+}
+.trophy-sub { font-size: .82rem; color: var(--text-dim); font-style: italic; }
+
+/* Circuit cards */
+.circuit-list {
+  display: flex; flex-direction: column; gap: 1px;
+  background: var(--border); margin-top: 36px;
+}
+.circuit-card {
+  background: var(--bg3); padding: 40px 36px;
+  display: flex; gap: 32px; align-items: flex-start;
+  transition: background .25s, transform .3s var(--ease);
+}
+.circuit-card:hover { background: var(--bg4); transform: translateX(4px); }
+.circuit-num {
+  font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 900;
+  line-height: 1; flex-shrink: 0; width: 64px; user-select: none;
+}
+.circuit-card.vt-card  { border-left: 3px solid var(--gold-dim); }
+.circuit-card.vt-card:hover { border-left-color: var(--gold); }
+.circuit-card.vt-card .circuit-num { color: rgba(201,168,76,.12); }
+.circuit-card.km-card  { border-left: 3px solid var(--gold-dim); }
+.circuit-card.km-card:hover { border-left-color: var(--gold); }
+.circuit-card.km-card .circuit-num { color: rgba(201,168,76,.1); }
+.circuit-card.mma-card { border-left: 3px solid rgba(192,57,43,.35); }
+.circuit-card.mma-card:hover { border-left-color: var(--red); }
+.circuit-card.mma-card .circuit-num { color: rgba(192,57,43,.12); }
+
+.circuit-fed {
+  font-size: .56rem; letter-spacing: .3em; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 6px;
+}
+.vt-card .circuit-fed, .km-card .circuit-fed { color: var(--gold); }
+.mma-card .circuit-fed { color: var(--red-light); }
+
+.circuit-title {
+  font-family: 'Cinzel', serif; font-size: 1.2rem;
+  font-weight: 700; letter-spacing: .07em; margin-bottom: 14px;
+}
+.vt-card .circuit-title, .km-card .circuit-title { color: var(--gold-light); }
+.mma-card .circuit-title { color: var(--red-light); }
+
+.circuit-desc {
+  font-size: .84rem; line-height: 1.82; color: rgba(232,224,208,.8); margin-bottom: 20px;
+}
+.circuit-details {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+}
+.circuit-detail {
+  background: var(--bg4); padding: 14px 16px;
+}
+.circuit-detail-label {
+  font-size: .52rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 5px;
+}
+.circuit-detail-val {
+  font-size: .82rem; font-weight: 600; color: var(--text);
+}
+.vt-card .circuit-detail-val, .km-card .circuit-detail-val { color: var(--gold-light); }
+.mma-card .circuit-detail-val { color: var(--red-light); }
+
+/* Disciplines section */
+.disc-comp-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border); margin-top: 32px;
+}
+.disc-comp-card {
+  background: var(--bg3); padding: 32px 28px;
+  text-align: center; position: relative; overflow: hidden;
+  transition: background .25s, transform .3s var(--ease);
+}
+.disc-comp-card:hover { background: var(--bg4); transform: translateY(-4px); }
+.disc-comp-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+.disc-comp-title {
+  font-family: 'Cinzel', serif; font-size: .95rem;
+  font-weight: 700; letter-spacing: .1em; margin-bottom: 10px;
+}
+.disc-comp-desc { font-size: .78rem; color: rgba(232,224,208,.75); line-height: 1.7; }
+.disc-comp-card.star { border-top: 2px solid var(--gold); }
+.disc-comp-card.star .disc-comp-title { color: var(--gold); }
+.disc-comp-card.star::after {
+  content: 'Notre spécialité';
+  position: absolute; top: 12px; right: 12px;
+  font-size: .48rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold-dim); padding: 2px 7px;
+}
+
+/* Palmarès Matteo */
+.palmares-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-left: 3px solid var(--red); padding: 32px 36px; margin-top: 1px;
+  transition: background .25s, transform .3s var(--ease);
+}
+.palmares-card:hover { background: var(--bg4); transform: translateX(4px); }
+
+@media (max-width: 840px) {
+  .comp-stats { flex-direction: column; background: none; gap: 1px; }
+  .comp-stats .comp-stat { background: var(--bg3); }
+  .circuit-card { flex-direction: column; gap: 16px; }
+  .circuit-num { width: auto; }
+  .circuit-details { grid-template-columns: 1fr; }
+  .disc-comp-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.webp" alt="Logo" class="nav-logo">
+    <span class="nav-name">VÕ THUẬT<br>ES VITRY</span>
+  </a>
+  <button class="nav-toggle" aria-label="Ouvrir le menu" onclick="document.getElementById('nl').classList.toggle('open');this.textContent=document.getElementById('nl').classList.contains('open')?'✕':'☰'">☰</button>
+  <ul class="nav-links" id="nl">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="club.html">Le Club</a></li>
+    <li><a href="equipe.html">L'Équipe</a></li>
+    <li><a href="planning.html">Planning</a></li>
+    <li><a href="competition.html" aria-current="page">Compétition</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Premier cours offert</a>
+</nav>
+
+<div class="wrap">
+  <div class="page-head" data-bg="COMPÉTITION">
+    <h1 class="fade-up">Compétition</h1>
+    <p class="fade-up" style="animation-delay:.1s">Un club qui gagne — sur tous les circuits, à tous les niveaux</p>
+  </div>
+</div>
+
+<!-- ══ STATS ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">En chiffres</p>
+    <h2 class="title">Un palmarès qui parle</h2>
+    <p class="body-text">La compétition est au cœur de l'ADN du Võ Thuật Es Vitry. Chaque année, nos combattants montent sur les podiums d'Île-de-France et de France entière — dans les formes, le travail en groupe, et surtout au combat.</p>
+
+    <div class="comp-stats">
+      <div class="comp-stat">
+        <div class="comp-stat-num gold">~100</div>
+        <div class="comp-stat-label">Médailles par an</div>
+      </div>
+      <div class="comp-stat">
+        <div class="comp-stat-num gold">3</div>
+        <div class="comp-stat-label">Circuits de compétition</div>
+      </div>
+      <div class="comp-stat">
+        <div class="comp-stat-num gold">4</div>
+        <div class="comp-stat-label">Dates VCT en Île-de-France</div>
+      </div>
+      <div class="comp-stat">
+        <div class="comp-stat-num gold">5</div>
+        <div class="comp-stat-label">Étapes FMMAF en France</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ TROPHÉE ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Distinction</p>
+    <h2 class="title">La récompense suprême</h2>
+    <p class="body-text">Au-delà des médailles individuelles, c'est la totalité du club qui a été reconnue au plus haut niveau national.</p>
+
+    <div class="trophy-card">
+      <div class="trophy-eyebrow">Palmarès collectif · FVCTVNF</div>
+      <div class="trophy-title">Coupe du meilleur club de France<br>en Combat Võ Cổ Truyền</div>
+      <div class="trophy-sub">La consécration de décennies de travail — décernée au club le plus performant sur l'ensemble du territoire national en discipline combat.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ LES 3 CIRCUITS ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Calendrier</p>
+    <h2 class="title">Les 3 circuits de compétition</h2>
+    <p class="body-text">Du plus jeune au plus confirmé, nos adhérents ont accès à trois circuits distincts, progressifs et complémentaires.</p>
+
+    <div class="circuit-list">
+
+      <!-- VCT -->
+      <div class="circuit-card vt-card">
+        <div class="circuit-num">01</div>
+        <div style="flex:1;">
+          <div class="circuit-fed">FVCTVNF</div>
+          <div class="circuit-title">Võ Cổ Truyền</div>
+          <p class="circuit-desc">Le circuit historique du club. Quatre rendez-vous par an en Île-de-France, ouverts dès l'âge de 6 ans. Les compétiteurs s'affrontent dans les trois grandes familles du Võ Thuật — Quyền, Song Luyện et Combat. C'est sur ce circuit que le club a décroché la coupe du meilleur club de France en combat, et que se forgent chaque année la grande majorité de nos ~100 médailles.</p>
+          <div class="circuit-details">
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Dates</div>
+              <div class="circuit-detail-val">4 / an</div>
+            </div>
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Zone</div>
+              <div class="circuit-detail-val">Île-de-France</div>
+            </div>
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Âge</div>
+              <div class="circuit-detail-val">Dès 6 ans</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karaté Mixte -->
+      <div class="circuit-card km-card">
+        <div class="circuit-num">02</div>
+        <div style="flex:1;">
+          <div class="circuit-fed">Karaté Mixte</div>
+          <div class="circuit-title">Karaté Mixte</div>
+          <p class="circuit-desc">Plusieurs rendez-vous annuels pour les plus avancés. La discipline karaté mixte est très proche du Võ Thuật dans sa structure — nos combattants y sont naturellement à l'aise et s'y distinguent régulièrement sur le podium.</p>
+          <div class="circuit-details">
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Dates</div>
+              <div class="circuit-detail-val">Plusieurs / an</div>
+            </div>
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Zone</div>
+              <div class="circuit-detail-val">Île-de-France</div>
+            </div>
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Niveau</div>
+              <div class="circuit-detail-val">Confirmés</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FMMAF -->
+      <div class="circuit-card mma-card">
+        <div class="circuit-num">03</div>
+        <div style="flex:1;">
+          <div class="circuit-fed">FMMAF</div>
+          <div class="circuit-title">MMA League</div>
+          <p class="circuit-desc">Cinq étapes réparties sur toute la France, réservées aux adultes. Le circuit MMA le plus structuré du pays, sous l'égide de la FMMAF. Nos combattants sont désormais présents sur ces étapes, portant les couleurs du club au plus haut niveau des sports de combat modernes.</p>
+          <div class="circuit-details">
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Étapes</div>
+              <div class="circuit-detail-val">5 / an</div>
+            </div>
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Zone</div>
+              <div class="circuit-detail-val">France entière</div>
+            </div>
+            <div class="circuit-detail">
+              <div class="circuit-detail-label">Âge</div>
+              <div class="circuit-detail-val">Adultes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ══ DISCIPLINES EN COMPÉTITION ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Les épreuves</p>
+    <h2 class="title">Ce que l'on défend en compétition</h2>
+    <p class="body-text">Les trois grandes familles du Võ Thuật se retrouvent sur les tatamis de compétition. Chacune révèle une facette différente du combattant — et ensemble, elles font de nos athlètes des profils complets.</p>
+
+    <div class="disc-comp-grid">
+
+      <div class="disc-comp-card">
+        <span class="disc-comp-icon" aria-hidden="true">🥋</span>
+        <div class="disc-comp-title">Quyền</div>
+        <p class="disc-comp-desc">Les formes individuelles notées sur la précision, la fluidité et la puissance d'exécution. Une démonstration de maîtrise technique pure.</p>
+      </div>
+
+      <div class="disc-comp-card">
+        <span class="disc-comp-icon" aria-hidden="true">👥</span>
+        <div class="disc-comp-title">Song Luyện</div>
+        <p class="disc-comp-desc">Les chorégraphies martiales à plusieurs — acrobaties, enchaînements spectaculaires, synchronisation parfaite. Un travail collectif d'une grande exigence.</p>
+      </div>
+
+      <div class="disc-comp-card star">
+        <span class="disc-comp-icon" aria-hidden="true">⚔️</span>
+        <div class="disc-comp-title">Combat</div>
+        <p class="disc-comp-desc">L'épreuve reine — face-à-face direct où toutes les techniques s'expriment. C'est là que le club excelle le plus, avec la majorité de ses médailles et sa distinction nationale.</p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ══ PALMARÈS FMMAF ══ -->
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Circuit FMMAF</p>
+    <h2 class="title">En marche sur le circuit MMA</h2>
+    <p class="body-text">La base technique du Võ Thuật, forgée sur des décennies, s'impose désormais également sur le circuit MMA officiel. Nos combattants adultes font leurs preuves sur les étapes de la MMA League nationale.</p>
+
+    <div class="palmares-card">
+      <p style="font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red-light);font-weight:700;margin-bottom:10px;">Étape MMA League — FMMAF</p>
+      <p style="font-family:'Cinzel',serif;font-size:1.05rem;font-weight:700;letter-spacing:.06em;margin-bottom:8px;">Médaille d'Or</p>
+      <p style="font-size:.82rem;color:rgba(232,224,208,.75);line-height:1.7;">Une première médaille d'or décrochée sur le circuit national FMMAF — la preuve que la transmission du Võ Thuật ouvre aussi les portes du MMA de compétition au plus haut niveau.</p>
+    </div>
+
+    <div class="card card-gold" style="margin-top:1px;">
+      <p class="card-eyebrow gold">Licence compétition FMMAF</p>
+      <p class="card-text">Pour participer aux étapes MMA League, une licence compétition FMMAF est requise en supplément de la cotisation du club : <strong style="color:var(--gold-light)">+30 €</strong>. Renseignez-vous auprès de l'encadrement.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ══ CTA ══ -->
+<div class="wrap" style="padding-bottom:80px;">
+  <div class="cta-banner">
+    <div>
+      <div class="cta-banner-title">Vous voulez compétir ?</div>
+      <div class="cta-banner-sub">Venez vous entraîner — nous vous préparerons aux compétitions de votre niveau</div>
+    </div>
+    <a href="contact.html" class="btn btn-gold">Nous rejoindre</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© Võ Thuật Es Vitry · Fondé en 1983 · Vitry-sur-Seine</span>
+  <a href="https://instagram.com/esvitryvothuatmma" target="_blank" rel="noopener" class="footer-insta">@esvitryvothuatmma</a>
+  <div class="footer-feds">
+    <span class="fed-badge">FVCTVNF</span>
+    <span class="fed-badge">FMMAF</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
