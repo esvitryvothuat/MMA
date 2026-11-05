@@ -1,23 +1,157 @@
-<section class="section" id="boutique" style="min-height:55vh; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+!DOCTYPE html>
 
-  <div class="section-label" style="justify-content:center;">
+<html lang="fr">
 
-    Boutique
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Boutique — Võ Thuật Es Vitry</title>
+
+<meta name="description" content="Boutique officielle du Võ Thuật Es Vitry.">
+
+<meta property="og:title" content="Boutique — Võ Thuật Es Vitry">
+
+<meta property="og:description" content="Retrouvez prochainement les articles officiels du club.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://esvitryvothuat.fr/boutique.html">
+
+<meta property="og:image" content="https://esvitryvothuat.fr/logo.webp">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+
+<nav class="nav">
+
+  <a href="index.html" class="nav-brand">
+
+    <img src="logo.webp" alt="Logo" class="nav-logo">
+
+    <span class="nav-name">VÕ THUẬT<br>ES VITRY</span>
+
+  </a>
+
+  <button class="nav-toggle" aria-label="Ouvrir le menu" onclick="document.getElementById('nl').classList.toggle('open');this.textContent=document.getElementById('nl').classList.contains('open')?'✕':'☰'">☰</button>
+
+  <ul class="nav-links" id="nl">
+
+    <li><a href="index.html">Accueil</a></li>
+
+    <li><a href="club.html">Le Club</a></li>
+
+    <li><a href="equipe.html">L'Équipe</a></li>
+
+    <li><a href="planning.html">Planning</a></li>
+
+    <li><a href="competition.html">Compétition</a></li>
+
+    <li><a href="tarifs.html">Tarifs</a></li>
+
+    <li><a href="boutique.html" aria-current="page">Boutique</a></li>
+
+    <li><a href="contact.html">Contact</a></li>
+
+  </ul>
+
+  <a href="contact.html" class="nav-cta">Premier cours offert</a>
+
+</nav>
+
+<!-- ══ EN-TÊTE ══ -->
+
+<div class="wrap">
+
+  <div class="page-head" data-bg="BOUTIQUE">
+
+    <h1 class="fade-up">Boutique</h1>
+
+    <p class="fade-up" style="animation-delay:.1s">
+
+      Les articles officiels du Võ Thuật Es Vitry
+
+    </p>
 
   </div>
 
-  <h2 style="font-family:'Cinzel',serif; color:var(--gold); font-size:clamp(1.6rem,4vw,2.4rem); letter-spacing:.08em; margin-bottom:18px;">
+</div>
 
-    La boutique arrive bientôt
+<!-- ══ CONTENU BOUTIQUE ══ -->
 
-  </h2>
+<div class="wrap">
 
-  <p style="color:var(--text-dim); font-size:.95rem; line-height:1.8; max-width:560px; margin:0 auto;">
+  <section class="section" style="text-align:center; min-height:400px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
 
-    Retrouvez prochainement les articles officiels du club.
+    <p class="eyebrow">Collection officielle</p>
 
-    Les précommandes seront bientôt ouvertes.
+    <h2 class="title">La boutique arrive bientôt</h2>
 
-  </p>
+    <p class="body-text" style="max-width:600px; margin:0 auto; text-align:center;">
 
-</section>
+      Retrouvez prochainement les équipements et vêtements officiels du club.
+
+      Les précommandes seront bientôt ouvertes.
+
+    </p>
+
+  </section>
+
+</div>
+
+<!-- ══ CTA ══ -->
+
+<div class="wrap" style="padding-bottom:80px;">
+
+  <div class="cta-banner">
+
+    <div>
+
+      <div class="cta-banner-title">Rejoignez le club</div>
+
+      <div class="cta-banner-sub">Premier cours offert · Tous niveaux · Dès 6 ans</div>
+
+    </div>
+
+    <a href="contact.html" class="btn btn-gold">Nous contacter</a>
+
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+
+<footer>
+
+  <span class="footer-copy">© Võ Thuật Es Vitry · Fondé en 1983 · Vitry-sur-Seine</span>
+
+  <a href="https://instagram.com/esvitryvothuatmma" target="_blank" rel="noopener" class="footer-insta">@esvitryvothuatmma</a>
+
+  <div class="footer-feds">
+
+    <span class="fed-badge">FVCTVNF</span>
+
+    <span class="fed-badge">FMMAF</span>
+
+  </div>
+
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+
+</html>
