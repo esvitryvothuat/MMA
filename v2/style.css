@@ -723,7 +723,7 @@ footer {
 
   .table-wrap { margin: 24px -20px 0; padding: 0 20px; }
 }
-@media (max-width: 440px) {
+@media (max-width: 900px) {
   .hero-title { font-size: 2rem; }
   .page-head h1 { font-size: 1.9rem; }
   .insta-block { padding: 36px 20px; }
